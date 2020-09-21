@@ -14,5 +14,6 @@ const MenuList = ({ menus, updateMenu, deleteMenu }) => (
       )
     }
   </Card.Group>
+)
 
 export default MenuList;
