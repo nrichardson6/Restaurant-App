@@ -8,6 +8,12 @@ const Menu = ({ id,name,time,updateMenu, deleteMenu}) => (
       <h4>Serving at:{time}</h4>
       <Button   
             icon
+            color="blue"
+            onClick={() => updateMenu(id)}>
+              <Icon name="pencil" />
+      </Button>
+      <Button   
+            icon
             color="red"
             onClick={() => deleteMenu(id)}>
               <Icon name="trash" />

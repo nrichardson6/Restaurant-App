@@ -3,13 +3,13 @@ import './App.css';
 import { Container } from "semantic-ui-react";
 import axios from "axios";
 import MenuList from "./MenuList";
-// import MenuForm from "./MenuForm";
+import MenuForm from "./MenuForm";
 
 function App() {
 const [menus,setMenus] = useState([
-  {id:1, name:"American", time:"Lunch"},
-  {id:2, name:"Thai", time:"Dinner"},
-  {id:3, name:"Classic", time:"Breakfast"},
+  {id:1, name:"Manicotti", time:"Lunch"},
+  {id:2, name:"Kawasaki", time:"Dinner"},
+  {id:3, name:"Shot of Brushotti", time:"All Day"},
 ]);
 
   useEffect (() => {
@@ -70,8 +70,9 @@ const [menus,setMenus] = useState([
       <h3>When youre here youre family</h3>
 
       <MenuList updateMenu={updateMenu} deleteMenu={deleteMenu} menus={menus} />
+      <br />
+      <MenuForm addMenu={addMenu} />
 
-  
     </Container>
   );
 }
