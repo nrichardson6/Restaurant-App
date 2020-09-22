@@ -8,8 +8,8 @@ const MenuList = ({ menus, updateMenu, deleteMenu }) => (
         <Menu
           key={menu.id}
           {...menu}
-          updateTodo={updateMenu}
-          deleteTodo={deleteMenu}
+          updateMenu={updateMenu}
+          deleteMenu={deleteMenu}
         />
       )
     }

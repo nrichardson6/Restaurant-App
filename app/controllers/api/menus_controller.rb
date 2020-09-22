@@ -2,35 +2,37 @@ class Api::MenusController < ApplicationController
 
 
 def index
-  redner json: Menu.all 
+  render json: Menu.all 
 end
 
 
 def create
-  item = Menu.new(menu_params)
-  if menu.save
+  menu = Menu.new(menu_params)
+  if (menu.save)
     render json: menu
   else
     render json: {errors: menu.errors}, status: :unprocessable_entity 
   end
-  end
 end
 
 def update 
-  item = Menu.find(params[:id])
-  menu.update(complete: !menu.complete)
+  menu = Menu.find(params[:id])
+  menu.update(time: !menu.time)
   render json: menu
 end
 
 
  def destroy
-  Menu.find(params[:id]).destroyrender json: {message: 'Menu deleted' } 
+  menu =  Menu.find(params[:id]).destroy 
   
+  render json: {message: 'Menu deleted' } 
+ end
 
 private
 
 def menu_params
   params.require(:menu).permit(:name, :time)
 end
+
 
 end

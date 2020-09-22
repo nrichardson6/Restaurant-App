@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Form,Button,Icon } from "semantic-ui-react";
 
-const MenuForm = ({ addMenu}) => {
+const MenuForm = ({addMenu}) => {
 
-  const [info, setInfo] = useState({
-    name:"",
-    time:"",
-  });
+  const [name, setName] = useState("");
+  const [time,setTime]= useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMenu(info); 
-    setInfo("");
+    addMenu(name,time); 
+    setName("");
+    setTime("");
   };
   
   
@@ -22,14 +22,14 @@ const MenuForm = ({ addMenu}) => {
           label="Menu"
           placeholder="Add a Menu"
           required
-          value={useState}
-          onChange={(e) => setInfo(e.target.value)}/>
+          value={name}
+          onChange={(e) => setName(e.target.value)}/>
       <Form.Input
           label="Time"
           placeholder="Breakfast,Lunch,Etc"
           required
-          value={useState.time}
-          onChange={(e) => setInfo(e.target.value)}
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
           />
 
       <Button   
